@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TRADE BUSINESS CORPORATION S.A. | DIAMOND PLATFORM</title>
+    <title>TRADE BUSINESS CORPORATION S.A. | DIAMOND ELITE PLATFORM</title>
     
-    <!-- CÓDIGO DE VALIDAÇÃO GOOGLE ADSENSE -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1086480040758450"
-     crossorigin="anonymous"></script>
+    <!-- GOOGLE ADSENSE (ca-pub-1086480040758450) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1086480040758450" crossorigin="anonymous"></script>
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="https://i.postimg.cc/9fbTGMFS/TRADE.png">
     
-    <!-- FONTES E LIBRARIAS -->
+    <!-- LIBRARIAS DE ELITE -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,14 +20,14 @@
         :root {
             --primary: #010409; --navy: #0d1117; --blue: #2563eb; --whatsapp: #22c55e;
             --accent: #38bdf8; --gold: #f59e0b; --white: #ffffff; --gray: #8b949e;
-            --glass: rgba(255, 255, 255, 0.05); --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --glass: rgba(255, 255, 255, 0.05); --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         html, body { overflow-x: hidden; width: 100%; background: var(--primary); color: var(--white); scroll-behavior: smooth; }
 
         /* --- ANIMAÇÕES --- */
-        @keyframes float-hero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+        @keyframes float-hero { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
         @keyframes pulse-logo { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.08); } }
 
         /* --- HEADER --- */
@@ -45,71 +44,82 @@
 
         .nav-desk { display: flex; list-style: none; gap: 10px; }
         .nav-desk a { text-decoration: none; color: white; font-weight: 600; font-size: 0.65rem; text-transform: uppercase; cursor: pointer; padding: 10px 15px; border-radius: 50px; transition: var(--transition); }
-        .nav-desk a.active, .nav-desk a:hover { background: var(--blue); color: white; box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4); }
+        .nav-desk a.active, .nav-desk a:hover { background: var(--blue); }
 
-        .burger { display: none; cursor: pointer; flex-direction: column; gap: 7px; z-index: 9500; color: white; font-size: 1.5rem; }
+        .burger { display: none; cursor: pointer; font-size: 1.8rem; color: white; }
 
-        /* --- WIDGET CONCIERGE DUAL --- */
-        #concierge { position: fixed; bottom: 30px; left: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        .c-main-btn { width: 65px; height: 65px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4); }
-        .c-options { display: none; flex-direction: column; gap: 10px; animation: slideUp 0.3s ease; }
-        .c-options.active { display: flex; }
-        .c-opt { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s; }
-        .c-opt:hover { transform: scale(1.1); }
+        /* --- CONCIERGE DUAL --- */
+        #concierge { position: fixed; bottom: 30px; left: 30px; z-index: 9999; display: flex; flex-direction: column-reverse; align-items: center; gap: 15px; }
+        .c-main-btn { width: 65px; height: 65px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; cursor: pointer; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4); }
+        .c-options { display: none; flex-direction: column; gap: 12px; }
+        .c-options.active { display: flex; animation: slideUp 0.4s ease; }
+        .c-opt { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; box-shadow: 0 10px 20px rgba(0,0,0,0.5); text-decoration: none; }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- PAGES --- */
+        /* --- SISTEMA DE PÁGINAS SPA --- */
         .page { display: none; min-height: 100vh; padding-top: 100px; width: 100%; animation: pageFade 0.8s ease forwards; }
         .page.active { display: block; }
         @keyframes pageFade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- PÁGINA: INÍCIO --- */
+        /* --- HOME PAGE --- */
         .hero { display: flex; align-items: center; min-height: 85vh; padding: 40px 10%; position: relative; flex-wrap: wrap; }
-        .hero-video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; opacity: 0.15; filter: grayscale(1); }
-        .hero-video-bg video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-video-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; opacity: 0.2; }
+        .hero-video-bg video { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
         .hero-text { flex: 1.2; z-index: 10; }
         .hero-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 5rem); line-height: 1.1; margin-bottom: 25px; font-weight: 900; }
         .hero-text p { font-size: 1.3rem; color: var(--gray); max-width: 650px; margin-bottom: 50px; letter-spacing: 3px; line-height: 2; }
         .hero-img { flex: 1; display: flex; justify-content: flex-end; align-items: flex-end; }
         .hero-img img { max-width: 100%; max-height: 85vh; animation: float-hero 5s infinite; filter: drop-shadow(0 0 50px rgba(37, 99, 235, 0.4)); }
 
-        /* --- PÁGINA: EMPRESA (FLYER DETALHADO) --- */
-        .company-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; padding: 80px 8%; background: var(--white); color: #000; border-radius: 60px 60px 0 0; }
-        .company-card { background: #f8fafc; padding: 50px; border-radius: 40px; border-top: 6px solid var(--blue); }
-        .company-card h3 { color: var(--blue); margin-bottom: 25px; font-size: 1.6rem; text-transform: uppercase; font-family: 'Playfair Display'; }
-        .company-card p { line-height: 2; color: #334155; margin-bottom: 20px; font-size: 1.15rem; text-align: justify; }
+        /* --- VÍDEO INSTITUCIONAL --- */
+        .video-box { padding: 60px 8%; text-align: center; background: var(--navy); }
+        .v-container { width: 100%; max-width: 1100px; margin: 0 auto; aspect-ratio: 16/9; border-radius: 30px; overflow: hidden; border: 3px solid var(--blue); }
 
-        /* --- GALERIA TÉCNICA (BWEDE CONTEÚDO) --- */
-        .gallery-section { padding: 80px 8%; background: var(--navy); }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .info-box { background: var(--glass); padding: 50px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.05); }
-        .info-box h3 { color: var(--accent); margin-bottom: 20px; font-size: 1.4rem; text-transform: uppercase; }
-        .info-box p { color: #cbd5e1; line-height: 1.8; text-align: justify; }
+        /* --- PÁGINA: A EMPRESA (GIGANTE) --- */
+        .company-container { padding: 80px 8%; background: var(--white); color: #000; border-radius: 60px 60px 0 0; }
+        .company-header { text-align: center; margin-bottom: 60px; }
+        .company-header h2 { font-family: 'Playfair Display'; font-size: 3.5rem; color: var(--blue); text-transform: uppercase; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .info-card { background: #f8fafc; padding: 40px; border-radius: 30px; border-left: 8px solid var(--blue); }
+        .contact-info { margin-top: 60px; padding: 40px; background: var(--navy); border-radius: 30px; color: white; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; }
+        .contact-info div i { color: var(--blue); margin-right: 10px; font-size: 1.5rem; }
 
-        /* --- MANUAL GIGANTE --- */
+        /* --- PORTAL DE NOTÍCIAS REAL-TIME --- */
+        .news-header { padding: 40px 8%; text-align: center; }
+        .news-search { max-width: 800px; margin: 0 auto 40px; }
+        .news-search input { width: 100%; padding: 20px 30px; border-radius: 100px; border: 2px solid var(--blue); background: var(--glass); color: white; font-size: 1.1rem; outline: none; }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; padding: 0 8% 100px; }
+        .n-card { background: var(--navy); border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; cursor: pointer; }
+        .n-card:hover { border-color: var(--blue); transform: translateY(-10px); }
+        .n-img { height: 200px; background-size: cover; background-position: center; border-bottom: 3px solid var(--blue); }
+        .n-body { padding: 25px; }
+
+        /* --- MANUAL GIGANTE (BWEDE CONTEÚDO) --- */
         .manual-view { max-width: 1100px; margin: 40px auto; background: white; color: black; padding: 80px; border-radius: 50px; box-shadow: 0 40px 80px rgba(0,0,0,0.3); }
-        .chapter { margin-bottom: 60px; border-left: 8px solid var(--blue); padding-left: 40px; }
-        .chapter h3 { font-size: 2rem; color: var(--blue); margin-bottom: 25px; text-transform: uppercase; font-family: 'Playfair Display'; }
-        .chapter p { font-size: 1.2rem; line-height: 2.2; margin-bottom: 25px; color: #334155; text-align: justify; }
+        .chapter { margin-bottom: 70px; border-left: 10px solid var(--blue); padding-left: 40px; }
+        .chapter h3 { font-size: 2.2rem; color: var(--blue); margin-bottom: 30px; text-transform: uppercase; font-family: 'Playfair Display'; }
+        .chapter p { font-size: 1.25rem; line-height: 2.3; margin-bottom: 25px; color: #334155; text-align: justify; }
 
-        /* --- INQUÉRITO 14 PONTOS --- */
+        /* --- INQUÉRITO 14 PONTOS (REAL) --- */
         .inquiry-card { max-width: 1000px; margin: 40px auto; background: white; padding: 60px; border-radius: 50px; color: #000; box-shadow: 0 40px 80px rgba(0,0,0,0.1); }
+        .inquiry-card h2 { text-align: center; margin-bottom: 40px; font-family: 'Playfair Display'; color: var(--blue); }
         .field { margin-bottom: 25px; }
         .field label { display: block; font-weight: 800; margin-bottom: 10px; font-size: 0.85rem; text-transform: uppercase; }
-        input, select, textarea { width: 100%; padding: 20px; border: 2.5px solid #e2e8f0; border-radius: 18px; font-size: 1.1rem; transition: 0.3s; }
-        .btn-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+        input, select, textarea { width: 100%; padding: 18px; border: 2.5px solid #e2e8f0; border-radius: 18px; font-size: 1.1rem; transition: 0.3s; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
         .big-btn { padding: 25px; border: none; border-radius: 20px; font-weight: 800; color: white; cursor: pointer; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 15px; font-size: 1.1rem; }
 
-        /* --- RODAPÉ --- */
+        /* FOOTER */
         footer { padding: 100px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-weight: 800; letter-spacing: 5px; color: var(--gray); text-transform: uppercase; font-size: 0.8rem; }
 
         @media (max-width: 992px) {
             .hero { flex-direction: column; text-align: center; padding-top: 150px; }
             .hero-img { order: -1; margin-bottom: 40px; }
             .nav-desk { display: none; }
-            .burger { display: flex; }
-            .btn-duo { grid-template-columns: 1fr; }
-            .manual-view, .company-card { padding: 30px; border-radius: 0; }
+            .burger { display: block; }
+            .row, .btn-group { grid-template-columns: 1fr; }
+            .manual-view, .inquiry-card, .info-card { padding: 30px; border-radius: 0; }
         }
     </style>
 </head>
@@ -124,16 +134,24 @@
             <ul class="nav-desk">
                 <li><a onclick="nav('home')" id="n-home" class="active">Início</a></li>
                 <li><a onclick="nav('empresa')" id="n-empresa">A Empresa</a></li>
-                <li><a onclick="nav('galeria')" id="n-galeria">Galeria Técnica</a></li>
+                <li><a onclick="nav('noticias')" id="n-noticias">Notícias 24h</a></li>
                 <li><a onclick="nav('manual')" id="n-manual">Manual Gigante</a></li>
                 <li><a onclick="nav('inquerito')" id="n-inquerito">Inquérito</a></li>
-                <li><a onclick="nav('privacidade')" id="n-privacidade">Privacidade</a></li>
+                <li><a onclick="nav('legal')" id="n-legal">Privacidade</a></li>
             </ul>
         </nav>
         <div class="burger" onclick="toggleMNav()"><i class="fas fa-bars"></i></div>
     </header>
 
-    <!-- WIDGET CONCIERGE DUAL -->
+    <div class="nav-mobile" id="mNav">
+        <a onclick="nav('home'); toggleMNav()">INÍCIO</a>
+        <a onclick="nav('empresa'); toggleMNav()">EMPRESA</a>
+        <a onclick="nav('noticias'); toggleMNav()">NOTÍCIAS</a>
+        <a onclick="nav('manual'); toggleMNav()">MANUAL</a>
+        <a onclick="nav('inquerito'); toggleMNav()">INQUÉRITO</a>
+    </div>
+
+    <!-- CONCIERGE DUAL -->
     <div id="concierge">
         <div class="c-options" id="cOpts">
             <a href="javascript:void(0)" onclick="toWA()" class="c-opt" style="background: var(--whatsapp);"><i class="fab fa-whatsapp"></i></a>
@@ -150,102 +168,116 @@
             </div>
             <div class="hero-text" data-aos="fade-right">
                 <h1>Visão de Elite, <b>Execução de Diamante.</b></h1>
-                <p>O maior portal de inteligência estratégica de Angola. Consultoria 360º para investidores e empreendedores de alto nível.</p>
+                <p>O maior portal de inteligência técnica e estratégica de Angola. Consultoria 360º para investidores de alto nível.</p>
                 <button class="big-btn" style="background:var(--blue); width:auto; padding:20px 60px;" onclick="nav('inquerito')">INICIAR DIAGNÓSTICO EMPRESARIAL</button>
             </div>
-            <div class="hero-img" data-aos="zoom-in">
+            <div class="hero-img">
                 <img src="https://i.postimg.cc/50MwyJX3/Whats-App-Image-2026-03-12-at-12-38-16-Photoroom.png" alt="Consultora">
             </div>
         </section>
 
         <!-- VÍDEO INSTITUCIONAL -->
-        <section style="padding: 80px 8%; text-align:center; background: var(--navy);">
-            <div style="width:100%; max-width:1100px; margin:0 auto; aspect-ratio:16/9; border-radius:30px; overflow:hidden; border:3px solid var(--blue);">
+        <section class="video-box">
+            <h2 style="font-family:'Playfair Display'; font-size:3rem; margin-bottom:40px;">NOSSA APRESENTAÇÃO</h2>
+            <div class="v-container">
                 <iframe src="https://screenapp.io/app/v/SLkxriGjmp" style="width:100%; height:100%; border:none;" allowfullscreen></iframe>
             </div>
         </section>
-
-        <!-- DOWNLOADS -->
-        <section style="padding:80px 8%; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; background:var(--primary);">
-            <div class="manual-view" style="background:var(--glass); color:white; border-top:4px solid var(--gold); text-align:center; margin:0; box-shadow:none;">
-                <i class="fas fa-file-pdf" style="font-size:3rem; color:var(--gold); margin-bottom:20px;"></i>
-                <h3>Checklist de Abertura 2026</h3>
-                <button class="big-btn" style="background:var(--blue); font-size:0.7rem; padding:15px; margin-top:20px;" onclick="triggerDownload('CHECKLIST_TRADE_2026.doc')">BAIXAR MATERIAL</button>
-            </div>
-        </section>
     </main>
 
-    <!-- PÁGINA: EMPRESA (CONTEÚDO FLYER) -->
+    <!-- PÁGINA: A EMPRESA (DETALHAMENTO MASSIVO) -->
     <main id="p-empresa" class="page">
-        <section class="company-grid">
-            <div class="company-card">
-                <h3>Incubadora de Negócios</h3>
-                <p>A unidade de incubação da Trade Business Corporation S.A. é o polo de aceleração mais robusto de Angola. Transformamos ideias embrionárias em empresas lucrativas através de Aconselhamento e Mentoria personalizada para CEOs. Nosso foco é a validação do modelo de negócio e a redução de riscos operacionais no primeiro ano de vida da empresa.</p>
-                <p>Oferecemos Formações Técnicas e Workshops especializados que capacitamos as vossas equipas em liderança, gestão financeira e marketing digital estratégico.</p>
+        <section class="company-container">
+            <div class="company-header">
+                <h2>QUEM SOMOS E O QUE FAZEMOS</h2>
+                <p style="font-size: 1.4rem; color: #475569; margin-top: 20px;">"Transformamos ideias em negócios sustentáveis com suporte estratégico, financeiro e legal completo."</p>
             </div>
-            <div class="company-card">
-                <h3>Consultoria Empresarial</h3>
-                <p>Inteligência de mercado pura. Elaboramos Planos de Negócio que são aceites por instituições bancárias de prestígio e investidores internacionais. Realizamos Estudos de Viabilidade Económica, Financeira e Social profundos, garantindo que cada Kwanza investido tenha um retorno projetado real.</p>
-                <p>Atuamos ainda na Organização de Sistemas Normativos e elaboração de Estudos de Impacto Ambiental para garantir conformidade legal plena.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Serviços de Incubadora</h3>
+                    <p>A unidade de incubação da Trade Business Corporation S.A. é o polo de aceleração empresarial mais robusto de Angola. Atuamos na validação técnica de modelos de negócio, garantindo que startups e PMEs nasçam com bases sólidas para resistir aos desafios do mercado nacional.</p>
+                    <p>• Aconselhamento e Mentoria personalizada para CEOs e Fundadores.<br>• Formações Técnicas e Workshops práticos de gestão e liderança.<br>• Desenvolvimento de competências executivas e Programas de Apoio Contínuo.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Consultoria Empresarial</h3>
+                    <p>Nossa consultoria oferece inteligência de mercado pura. Elaboramos Planos de Negócio e Estratégias Corporativas que servem como roadmaps para o lucro. Realizamos Estudos de Viabilidade Económica, Financeira e Social detalhados, calculando o ROI real e o Payback dos seus investimentos.</p>
+                    <p>• Organização de Sistemas Normativos e Impacto Ambiental.<br>• Auditoria de Processos e Otimização Operacional.</p>
+                </div>
+                <div class="info-card" style="grid-column: 1 / -1;">
+                    <h3>Assessoria Legal & Financeira</h3>
+                    <p>Blindagem corporativa total perante AGT, BNA, ANPG e CMC. Gerimos todo o processo de Constituição de Empresas, licenciamento especializado para prestadores de serviços petrolíferos e regularização NIF/INSS. Especialistas em estruturar dossiês de Crédito (PAC, PRODESI, BDA) e gerir a Licença de Exportação de Capitais (LEC).</p>
+                </div>
             </div>
-            <div class="company-card">
-                <h3>Assessoria Legal & Financeira</h3>
-                <p>Blindagem corporativa perante a AGT, BNA, ANPG e CMC. Cuidamos da Constituição Legal de empresas, licenciamento especializado para o setor petrolífero e regularização total de NIF e INSS. Especialistas em estruturar operações de Crédito (PAC, PRODESI, BDA, FADA, FACRA) e gestão de Licenças de Exportação de Capitais (LEC).</p>
+
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt"></i> Golf II, Soba Kapassa, Edifício 2AL – Rés do Chão, Luanda</div>
+                <div><i class="fas fa-phone"></i> +244 976 824 861</div>
+                <div><i class="fas fa-envelope"></i> geral@tradebusinesscorporation.com</div>
             </div>
         </section>
     </main>
 
-    <!-- PÁGINA: GALERIA TÉCNICA -->
-    <main id="p-galeria" class="page">
-        <section class="gallery-section">
-            <div class="gallery-grid">
-                <div class="info-box">
-                    <h3>O Impacto do IVA 2026 em Angola</h3>
-                    <p>A conformidade tributária é o maior pilar de segurança. Explicamos detalhadamente a incidência do IVA no regime geral (14%) e as isenções para o setor produtivo. Atuamos na regularização de NIFs suspensos e na gestão de créditos fiscais para otimização de tesouraria.</p>
-                </div>
-                <div class="info-box">
-                    <h3>Investimento Estrangeiro e Repatriação</h3>
-                    <p>A nova Lei do Investimento Privado facilitou a entrada de capital, mas a conformidade com o BNA continua rigorosa. Nossa assessoria gere o processo legal de Exportação de Capitais (LEC), garantindo que dividendos fluam sem bloqueios burocráticos internacionais.</p>
-                </div>
+    <!-- PÁGINA: PORTAL DE NOTÍCIAS REAL-TIME -->
+    <main id="p-noticias" class="page">
+        <section class="news-header">
+            <h2 style="font-family:'Playfair Display'; font-size:3rem; margin-bottom:20px;">PORTAL DE INTELIGÊNCIA 24H</h2>
+            <div class="news-search">
+                <input type="text" id="ns" placeholder="Pesquisar notícias reais sobre finanças, economia, AGT, Angola..." onkeyup="if(event.key==='Enter') searchLiveNews()">
             </div>
         </section>
+        <div class="news-grid" id="newsFeed"></div>
     </main>
 
     <!-- PÁGINA: MANUAL GIGANTE (BWEDE CONTEÚDO) -->
     <main id="p-manual" class="page">
         <div class="manual-view">
-            <h2>MANUAL TÉCNICO DO EMPREENDEDOR</h2>
+            <h2>O MANUAL DEFINITIVO DO EMPREENDEDOR</h2>
             <div class="chapter">
                 <h3>I. PLANEAMENTO E VIABILIDADE</h3>
-                <p>O sucesso em Angola começa com a validação rigorosa da proposta de valor. O mercado nacional exige um Estudo de Viabilidade Económica e Financeira (EVEF) que considere as variações cambiais e o custo de infraestrutura local. Sem um modelo Canvas validado pela Trade Business, o risco de falha nos primeiros 12 meses é estatisticamente elevado.</p>
-                <p>Este capítulo detalha como mapear os canais de distribuição e as fontes de receita resilientes, fundamentais para a atração de parceiros estratégicos ou financiamento bancário.</p>
+                <p>O sucesso em Angola começa com a validação rigorosa da proposta de valor. O mercado nacional exige um Estudo de Viabilidade Económica e Financeira (EVEF) que considere as variações cambiais e o custo de logística local. Sem um modelo Canvas validado pela Trade Business, o risco de insolvência no primeiro ano de vida empresarial é de aproximadamente 70%. Nossa metodologia remove a incerteza do caminho do investidor.</p>
             </div>
             <div class="chapter">
                 <h3>II. REGULARIZAÇÃO FISCAL E AGT</h3>
-                <p>A conformidade fiscal é a sua maior credibilidade. Obtemos o seu NIF empresarial e enquadramos o seu negócio no regime tributário correto. Explicamos a importância da retenção na fonte, o imposto de selo e a gestão estratégica do IVA para otimização de tesouraria e saúde financeira.</p>
+                <p>A conformidade fiscal é a sua maior credibilidade bancária. Obtemos o seu NIF empresarial e enquadramos o seu negócio no regime tributário correto para maximizar a sua rentabilidade. Explicamos detalhadamente a incidência do IVA (14%) e as obrigações declarativas mensais para evitar suspensões que bloqueiam a sua operação comercial e financeira.</p>
+            </div>
+            <div class="chapter">
+                <h3>III. ENGENHARIA FINANCEIRA E CRÉDITO BDA</h3>
+                <p>Captar recursos através das linhas PAC ou PRODESI exige um dossier técnico impecável. Projetamos o seu fluxo de caixa a 5 anos, calculamos os índices de rentabilidade (TIR e VPL) e preparamos as garantias necessárias para a aprovação do seu crédito perante o comité de risco bancário angolano.</p>
             </div>
         </div>
     </main>
 
-    <!-- PÁGINA: INQUÉRITO 14 PONTOS -->
+    <!-- PÁGINA: INQUÉRITO 14 PONTOS (REAL) -->
     <main id="p-inquerito" class="page">
         <div class="inquiry-card">
-            <h2>INQUÉRITO DE CONSTITUIÇÃO COMPLETO</h2>
-            <form id="megaForm">
-                <div class="field"><label>Nome Completo *</label><input type="text" id="fnome" required></div>
-                <div class="field"><label>Contacto Telefónico *</label><input type="tel" id="ftel" required></div>
-                <div class="field"><label>E-mail *</label><input type="email" id="fmail" required></div>
-                <div class="field"><label>País *</label><input type="text" id="fpais" value="Angola" required></div>
-                <div class="field"><label>Já tem nome? *</label><select id="fhasn"><option>NÃO</option><option>SIM</option></select></div>
-                <div class="field"><label>Tipo de Sociedade *</label><select id="fsoc"><option>Individual</option><option>Por Quota</option><option>Anónima</option><option>Comandita</option></select></div>
-                <div class="field"><label>Sugestões Nomes (3) *</label><textarea id="fsug" rows="2" required></textarea></div>
-                <div class="field"><label>Conta Bancária? *</label><select id="fbnk"><option>NÃO</option><option>SIM</option></select></div>
-                <div class="field"><label>Espaço Físico? *</label><select id="fesp"><option>NÃO</option><option>SIM</option></select></div>
-                <div class="field"><label>Dimensão *</label><select id="fdim"><option>Micro</option><option>Pequena</option><option>Média</option><option>Grande</option></select></div>
-                <div class="field"><label>Tipo de Negócio *</label><input type="text" id="fneg" required></div>
-                <div class="field"><label>Já tem Plano de Negócio? *</label><select id="fplan"><option>NÃO</option><option>SIM</option></select></div>
+            <h2>INQUÉRITO DE CONSTITUIÇÃO DE EMPRESA</h2>
+            <form id="fullInquiry">
+                <div class="field"><label>1. Nome Completo *</label><input type="text" id="f1" required></div>
+                <div class="row">
+                    <div class="field"><label>2. Contacto Telefónico *</label><input type="tel" id="f2" required></div>
+                    <div class="field"><label>3. Email *</label><input type="email" id="f3" required></div>
+                </div>
+                <div class="field"><label>4. País *</label><input type="text" id="f4" value="Angola" required></div>
+                <div class="row">
+                    <div class="field"><label>5. Já tem nome para empresa? *</label><select id="f5"><option>NÃO</option><option>SIM</option></select></div>
+                    <div class="field"><label>6. Sugestões de nomes (Máx 3) *</label><input type="text" id="f6" required></div>
+                </div>
+                <div class="row">
+                    <div class="field"><label>7. Tipo de Sociedade *</label><select id="f7"><option>Individual</option><option>Por Quota</option><option>Anónima</option><option>Comandita</option></select></div>
+                    <div class="field"><label>8. Conta Bancária Empresarial? *</label><select id="f8"><option>NÃO</option><option>SIM</option></select></div>
+                </div>
+                <div class="row">
+                    <div class="field"><label>9. Espaço Físico? *</label><select id="f9"><option>NÃO</option><option>SIM</option></select></div>
+                    <div class="field"><label>10. Pretende abrir uma: *</label><select id="f10"><option>Micro</option><option>Pequena</option><option>Média</option><option>Grande</option></select></div>
+                </div>
+                <div class="field"><label>11. Qual o tipo de negócio? *</label><input type="text" id="f11" required></div>
+                <div class="row">
+                    <div class="field"><label>12. Já tem Plano de Negócio? *</label><select id="f12"><option>NÃO</option><option>SIM</option></select></div>
+                    <div class="field"><label>13. Serviço Pretendido *</label><select id="f13"><option>Abertura de Empresa</option><option>Crédito PAC/BDA</option><option>Licença ANPG/CMC</option><option>Mentoria</option></select></div>
+                </div>
+                <div class="field"><label>14. Observações Adicionais</label><textarea id="f14" rows="2"></textarea></div>
                 
-                <div class="btn-duo">
+                <div class="btn-group">
                     <button type="button" class="big-btn" style="background:var(--whatsapp);" onclick="toWA()">VIA WHATSAPP</button>
                     <button type="button" class="big-btn" style="background:var(--primary);" onclick="toMail()">VIA E-MAIL</button>
                 </div>
@@ -253,39 +285,55 @@
         </div>
     </main>
 
-    <!-- PÁGINA: PRIVACIDADE -->
-    <main id="p-privacidade" class="page">
+    <!-- PÁGINA: LEGAL -->
+    <main id="p-legal" class="page">
         <div class="manual-view">
             <h2>POLÍTICA DE PRIVACIDADE E TERMOS</h2>
-            <p>A Trade Business Corporation S.A. protege os seus dados conforme a Lei de Proteção de Dados de Angola. Este portal utiliza cookies para anúncios via Google AdSense.</p>
+            <p>A Trade Business Corporation S.A. respeita a sua privacidade. Este portal utiliza cookies para anúncios via Google AdSense. Seus dados são protegidos conforme a Lei angolana de proteção de dados.</p>
         </div>
     </main>
 
-    <footer>2026, DESENVOLVIDO PELA COMUNIDADE DOS SANTOS - 945 371 109</footer>
+    <footer>
+        2026, META 2026, DESENVOLVIDO PELA COMUNIDADE DOS SANTOS - 945 371 109
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+
         function nav(id) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById('p-' + id).classList.add('active');
             document.querySelectorAll('.nav-desk a').forEach(a => a.classList.remove('active'));
             if(document.getElementById('n-' + id)) document.getElementById('n-' + id).classList.add('active');
+            if(id === 'noticias') fetchLiveNews('finance economy angola');
             window.scrollTo(0,0);
         }
+
+        function toggleMNav() { document.getElementById('mNav').classList.toggle('active'); }
         function toggleConcierge() { document.getElementById('cOpts').classList.toggle('active'); }
-        function toggleMNav() { alert('Utilize o menu superior para navegar.'); }
 
-        function triggerDownload(f) {
-            const b = new Blob([`DOCUMENTO TRADE BUSINESS 2026\n\nFicheiro: ${f}`], {type:'text/plain'});
-            const l = document.createElement('a'); l.href = URL.createObjectURL(b); l.download = f; l.click();
+        async function fetchLiveNews(topic) {
+            const grid = document.getElementById('newsFeed');
+            grid.innerHTML = "<p style='text-align:center;width:100%;'>Conectando ao satélite de notícias...</p>";
+            const rssUrl = `https://news.google.com/rss/search?q=${topic}&hl=pt-PT&gl=PT&ceid=PT:pt-150`;
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+            try {
+                const r = await fetch(apiUrl); const d = await r.json();
+                grid.innerHTML = "";
+                d.items.forEach(i => {
+                    grid.innerHTML += `<div class="n-card" onclick="window.open('${i.link}','_blank')"><div class="n-img" style="background-image:url('${i.enclosure.link || 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600'}')"></div><div class="n-body"><span>${i.author || 'MERCADO'}</span><h3>${i.title}</h3><b>LER ARTIGO +</b></div></div>`;
+                });
+            } catch(e) { grid.innerHTML = "<p>Erro na ligação. Tente novamente.</p>"; }
         }
 
-        function buildMsg() {
-            return `TRADE BUSINESS - INQUÉRITO 2026\n\nNome: ${document.getElementById('fnome').value}\nNegócio: ${document.getElementById('fneg').value}\nTelefone: ${document.getElementById('ftel').value}\nSociedade: ${document.getElementById('fsoc').value}`;
+        function searchLiveNews() { fetchLiveNews(document.getElementById('ns').value); }
+
+        function getForm() {
+            return `TRADE BUSINESS - DIAGNÓSTICO 2026\n\n1. Nome: ${document.getElementById('f1').value}\n2. Tel: ${document.getElementById('f2').value}\n4. País: ${document.getElementById('f4').value}\n7. Sociedade: ${document.getElementById('f7').value}\n11. Negócio: ${document.getElementById('f11').value}\n13. Serviço: ${document.getElementById('f13').value}`;
         }
-        function toWA() { window.open(`https://wa.me/244976824861?text=${encodeURIComponent(buildMsg())}`, '_blank'); }
-        function toMail() { window.location.href = `mailto:geral@tradebusinesscorporation.com?subject=Inquérito&body=${encodeURIComponent(buildMsg())}`; }
+        function toWA() { window.open(`https://wa.me/244976824861?text=${encodeURIComponent(getForm())}`, '_blank'); }
+        function toMail() { window.location.href = `mailto:geral@tradebusinesscorporation.com?subject=Inquérito&body=${encodeURIComponent(getForm())}`; }
     </script>
 </body>
 </html>
